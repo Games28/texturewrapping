@@ -172,8 +172,14 @@ void draw_texel(olc::PixelGameEngine* pge,int x, int y, uint32_t* texture, vec4_
 	// Map the UV coordinate to the full texture width and height
 	int tex_x = abs((int)(interpolated_u * texture_width));
 	int tex_y = abs((int)(interpolated_v * texture_height));
-	
-	pge->Draw(x, y, texture[(texture_width * tex_y) + tex_x]);
+	uint32_t texel = texture[(texture_width * tex_y) + tex_x];
+	uint32_t magenta = 0xffff00ff;
+
+	if (texel != magenta)
+	{
+
+		pge->Draw(x, y, texel);
+	}
 	
 }
 

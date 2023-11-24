@@ -135,16 +135,16 @@ public:
 	{
 		render_method = RENDER_TEXTURED_WIRE;
 		cull_method = CULL_BACKFACE;
-		float fov = M_PI / 3.0; // the same as 180/3, or 60deg
+		float fov = M_PI / 2.0; // the same as 180/3, or 60deg
 		float aspect = (float)window_height / (float)window_width;
-		float znear = 0.1;
-		float zfar = 100.0;
+		float znear = 0.0;
+		float zfar = 0.0;
 		proj_matrix = mat4_make_perspective(fov, aspect, znear, zfar);
 
 		// Loads the vertex and face values for the mesh data structure
 		load_cube_mesh_data();
 		// load_obj_file_data("./assets/f22.obj");
-		load_png_texture_data("r2d2.png");
+		load_png_texture_data("saber.png");
 
 		// Load the hardcoded texture array in the global mesh texture variable
 		//mesh_texture = (uint32_t*)REDBRICK_TEXTURE;
@@ -338,7 +338,7 @@ public:
 			// Draw triangle wireframe
 		
 
-			FillCircle(triangle.pointsv4[0].x, triangle.pointsv4[0].y, 5, olc::CYAN);
+			FillCircle(triangle.pointsv4[0].x, triangle.pointsv4[0].y, 5, 0xffff00ff);
 			FillCircle(triangle.pointsv4[1].x, triangle.pointsv4[1].y, 5, olc::CYAN);
 			FillCircle(triangle.pointsv4[2].x, triangle.pointsv4[2].y, 5, olc::CYAN);
 			FillCircle(GetMouseX(), GetMouseY(), 5, olc::GREEN);
