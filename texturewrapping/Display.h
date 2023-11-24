@@ -4,8 +4,7 @@
 #include "olcPixelGameEngine.h"
 
 
-#define window_width 800
-#define window_height 600
+
 
 
 
